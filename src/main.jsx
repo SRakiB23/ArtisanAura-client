@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Registration/Register";
 import AddArts from "./pages/AddArts/AddArts";
+import ArtDetails from "./pages/ArtDetails/ArtDetails";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
       {
         path: "/addarts",
         element: <AddArts></AddArts>
+      },
+      {
+        path: "/artdetails/:_id",
+        element: <ArtDetails></ArtDetails>,
+        loader: () => fetch("http://localhost:3000/arts"),
       },
     ]
   },

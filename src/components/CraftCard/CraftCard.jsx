@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 function CraftCard({ art }) {
   const {
@@ -14,6 +14,7 @@ function CraftCard({ art }) {
     processing_time,
     stockStatus,
     email,
+    _id,
   } = art;
   return (
     <div>
@@ -24,11 +25,13 @@ function CraftCard({ art }) {
         <div className="card-body">
           <h2 className="card-title">{item_name}</h2>
           <p>{short_description}</p>
-          <div className="flex justify-between lg:gap-48"><p>{price}</p>
-          <p>{processing_time}</p></div>
-          <div className="card-actions">
+          <p>Price: {price}$</p>
+          <p>Processing Time: {processing_time}</p>
+          <Link
+            to={`/artdetails/${art._id}`}
+          >
             <button className="btn btn-primary">Details</button>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
