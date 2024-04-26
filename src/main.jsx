@@ -11,6 +11,7 @@ import Root from "./routes/Root";
 import Home from "./pages/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Registration/Register";
+import AddArts from "./pages/AddArts/AddArts";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:3000/arts"),
       },
       {
         path: "/login",
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/addarts",
+        element: <AddArts></AddArts>
       },
     ]
   },
