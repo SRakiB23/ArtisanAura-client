@@ -16,7 +16,6 @@ function MyArtCraftList({ art }) {
     email,
     _id,
   } = art;
-  console.log(art.item_name);
   return (
     <div>
       <div className="card-wrapper">
@@ -29,8 +28,8 @@ function MyArtCraftList({ art }) {
             <p>{short_description}</p>
             <p>Price: {price}$</p>
             <p>Processing Time: {processing_time}</p>
-            <Link to={`/artdetails/${art._id}`}>
-              <button className="btn btn-primary">Details</button>
+            <Link to={`/updatedetails/${art._id}`}>
+              <button className="btn btn-primary">Update</button>
             </Link>
           </div>
         </div>

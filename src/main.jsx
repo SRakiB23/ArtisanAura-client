@@ -13,6 +13,7 @@ import ArtDetails from "./pages/ArtDetails/ArtDetails";
 import AllArtCraft from "./pages/AllArtCraft/AllArtCraft";
 import PrivateRoute from "./routes/PrivateRoute";
 import MyArtCraft from "./pages/MyArtCraft/MyArtCraft";
+import UpdateDetails from "./pages/MyArtCraft/UpdateDetails";
 
 const router = createBrowserRouter([
   {
@@ -57,7 +58,11 @@ const router = createBrowserRouter([
       {
         path: "/myarts&crafts",
         element: <MyArtCraft></MyArtCraft>,
-        // loader: () => fetch(`http://localhost:3000/arts/email/${email}`),
+      },
+      {
+        path: "/updatedetails/:_id",
+        element: <UpdateDetails></UpdateDetails>,
+        loader: () => fetch("http://localhost:3000/arts"),
       },
     ],
   },
