@@ -1,9 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import AuthProvider from "./providers/AuthProvider";
 import { ToastContainer } from "react-toastify";
@@ -31,11 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: "/addarts",
-        element: <AddArts></AddArts>
+        element: <AddArts></AddArts>,
       },
       {
         path: "/artdetails/:_id",
@@ -47,16 +44,15 @@ const router = createBrowserRouter([
         element: <AllArtCraft></AllArtCraft>,
         loader: () => fetch("http://localhost:3000/arts"),
       },
-    ]
+    ],
   },
 ]);
 
-
-
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
       <ToastContainer />
+    </AuthProvider>
   </React.StrictMode>
 );

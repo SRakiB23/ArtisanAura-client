@@ -23,16 +23,6 @@ function AllArtCraftTable({ art }) {
   }
   return (
     <>
-      {/* head */}
-      {/* <thead>
-            <tr>
-              <th>Name</th>
-              <th>Subcategory Name</th>
-              <th>Price</th>
-              <th></th>
-            </tr>
-          </thead> */}
-      {/* row 1 */}
       <td>
         <div className="flex items-center gap-3">
           <div className="avatar">
