@@ -25,7 +25,6 @@ function AllArtCraft() {
             {arts.map((art) => (
               <tr key={art._id}>
                 <AllArtCraftTable
-                 
                   art={art}
                   arts={arts}
                   setArts={setArts}
