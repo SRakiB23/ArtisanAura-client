@@ -99,18 +99,17 @@ function AddArts() {
               <label className="label">
                 <span className="label-text text-white">Subcategory Name</span>
               </label>
-              <label className="select w-1/2">
+              <label className="select">
                 <select
                   name="subcategory_name"
-                  className="select select-bordered"
                 >
-                  <option value="">Select Subcategory</option>
-                  <option value="item1">Landscpae Paintin</option>
-                  <option value="item2">Portrait Drawing</option>
-                  <option value="item3">Watercolour Painting</option>
-                  <option value="item4">Oil Painting</option>
-                  <option value="item5">Charcoal Sketching</option>
-                  <option value="item6">Cartoon Drawing</option>
+                  <option>Select Subcategory</option>
+                  <option>Landscape Painting</option>
+                  <option>Portrait Drawing</option>
+                  <option>Watercolour Painting</option>
+                  <option >Oil Painting</option>
+                  <option >Charcoal Sketching</option>
+                  <option>Cartoon Drawing</option>
                 </select>
               </label>
             </div>
