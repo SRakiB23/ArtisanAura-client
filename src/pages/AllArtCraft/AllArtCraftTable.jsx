@@ -14,13 +14,7 @@ function AllArtCraftTable({ art }) {
     stockStatus,
     _id,
   } = art;
-  {
-    /* <Link
-            to={`/artdetails/${art._id}`}
-          >
-            <button className="btn btn-primary">Details</button>
-          </Link> */
-  }
+
   return (
     <>
       <td>
@@ -41,7 +35,9 @@ function AllArtCraftTable({ art }) {
       </td>
       <td>{price}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">details</button>
+        <Link to={`/artdetails/${art._id}`}>
+          <button className="btn btn-primary btn-xs">details</button>
+        </Link>
       </th>
     </>
   );

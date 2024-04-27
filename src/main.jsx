@@ -11,6 +11,7 @@ import Register from "./pages/Registration/Register";
 import AddArts from "./pages/AddArts/AddArts";
 import ArtDetails from "./pages/ArtDetails/ArtDetails";
 import AllArtCraft from "./pages/AllArtCraft/AllArtCraft";
+import PrivateRoute from "./routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -32,11 +33,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/addarts",
-        element: <AddArts></AddArts>,
+        element: (
+          <PrivateRoute>
+            <AddArts></AddArts>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/artdetails/:_id",
-        element: <ArtDetails></ArtDetails>,
+        element: (
+          <PrivateRoute>
+            <ArtDetails></ArtDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:3000/arts"),
       },
       {
