@@ -1,59 +1,75 @@
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from "react-toastify";
+
 function AddArts() {
-    const handleAddArts = (event) => {
-      event.preventDefault();
-  
-      const form = event.target;
-      const name = form.name.value;
-      const item_name = form.item_name.value;
-      const subcategory_name = form.subcategory_name.value;
-      const short_description = form.short_description.value;
-      const price = form.price.value;
-      const rating = form.rating.value;
-      const photo = form.photo.value;
-      const customization = form.customization.value;
-      const processing_time = form.processing_time.value;
-      const stockStatus = form.stockStatus.value;
-      const email = form.email.value;
-  
-      const newArts = {
-        name,
-        item_name,
-        subcategory_name,
-        short_description,
-        price,
-        rating,
-        photo,
-        customization,
-        processing_time,
-        stockStatus,
-        email,
-      };
-      console.log(newArts);
-  
-      //send data to server
-  
-      fetch("http://localhost:3000/arts", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newArts),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.insetedID) {
-            alert("Successfully Added!");
-          }
-        });
+  const { user, displayName } = useContext(AuthContext);
+  const handleAddArts = (event) => {
+    event.preventDefault();
+
+    toast.success("Arts added successfully");
+
+    const form = event.target;
+    const name = form.name.value;
+    const item_name = form.item_name.value;
+    const subcategory_name = form.subcategory_name.value;
+    const short_description = form.short_description.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const photo = form.photo.value;
+    const customization = form.customization.value;
+    const processing_time = form.processing_time.value;
+    const stockStatus = form.stockStatus.value;
+    const email = form.email.value;
+
+    const newArts = {
+      name,
+      item_name,
+      subcategory_name,
+      short_description,
+      price,
+      rating,
+      photo,
+      customization,
+      processing_time,
+      stockStatus,
+      email,
     };
-    return (
-      <div className="bg-[#F4F3F0] px-20 py-10 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center pb-10">Add Arts & Crafts</h2>
+    console.log(newArts);
+
+    //send data to server
+
+    fetch("http://localhost:3000/arts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newArts),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insetedID) {
+          alert("Successfully Added!");
+        }
+      });
+  };
+  return (
+    <div
+      className="bg-cover bg-center min-h-screen max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8"
+      style={{
+        backgroundImage:
+          "url('https://i.ibb.co/vH9tWSk/stacked-waves-haikei.png')",
+      }}
+    >
+      <div className="px-20 py-10 max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-center text-black pb-10">
+          Add Arts & Crafts
+        </h2>
         <form onSubmit={handleAddArts}>
-        <div className="form-control w-full mb-6">
-            <label className="label">
-              <span className="label-text">Photo URL</span>
+          <div className="form-control w-full mb-6">
+            <label className="label ">
+              <span className="label-text text-white">Photo URL</span>
             </label>
             <label className="input-group">
               <input
@@ -68,7 +84,7 @@ function AddArts() {
           <div className="md:flex gap-4 mb-6">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Item Name</span>
+                <span className="label-text text-white">Item Name</span>
               </label>
               <label className="input-group">
                 <input
@@ -81,15 +97,21 @@ function AddArts() {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Subcategory Name</span>
+                <span className="label-text text-white">Subcategory Name</span>
               </label>
-              <label className="input-group">
-                <input
-                  type="text"
+              <label className="select w-1/2">
+                <select
                   name="subcategory_name"
-                  placeholder="Subcategory Name"
-                  className="input input-bordered md:w-full"
-                />
+                  className="select select-bordered"
+                >
+                  <option value="">Select Subcategory</option>
+                  <option value="item1">Landscpae Paintin</option>
+                  <option value="item2">Portrait Drawing</option>
+                  <option value="item3">Watercolour Painting</option>
+                  <option value="item4">Oil Painting</option>
+                  <option value="item5">Charcoal Sketching</option>
+                  <option value="item6">Cartoon Drawing</option>
+                </select>
               </label>
             </div>
           </div>
@@ -97,7 +119,7 @@ function AddArts() {
           <div className="md:flex gap-4 mb-6">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Short Description</span>
+                <span className="label-text text-white">Short Description</span>
               </label>
               <label className="input-group">
                 <input
@@ -110,7 +132,7 @@ function AddArts() {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Price</span>
+                <span className="label-text text-white">Price</span>
               </label>
               <label className="input-group">
                 <input
@@ -126,7 +148,7 @@ function AddArts() {
           <div className="md:flex gap-4 mb-6">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Rating</span>
+                <span className="label-text text-white">Rating</span>
               </label>
               <label className="input-group">
                 <input
@@ -139,7 +161,7 @@ function AddArts() {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Customization</span>
+                <span className="label-text text-white">Customization</span>
               </label>
               <label className="input-group">
                 <input
@@ -155,7 +177,7 @@ function AddArts() {
           <div className="md:flex gap-4 mb-6">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Processing Time</span>
+                <span className="label-text text-white">Processing Time</span>
               </label>
               <label className="input-group">
                 <input
@@ -168,7 +190,7 @@ function AddArts() {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Stock Status</span>
+                <span className="label-text text-white">Stock Status</span>
               </label>
               <label className="input-group">
                 <input
@@ -184,40 +206,42 @@ function AddArts() {
           <div className="md:flex gap-4 mb-6">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">User Email</span>
+                <span className="label-text text-white">User Email</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="email"
-                  placeholder="User Email"
+                  value={user?.email ?? ""}
                   className="input input-bordered md:w-full"
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">User Name</span>
+                <span className="label-text text-white">User Name</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="name"
-                  placeholder="User Name"
+                  value={user?.displayName ?? ""}
+                  // placeholder="User Name"
                   className="input input-bordered md:w-full"
                 />
               </label>
             </div>
           </div>
-          
+
           <input
             type="submit"
             value="Add Arts"
-            className="bg-gray-800 btn btn-block text-white"
+            className="bg-green-500 text-black btn btn-block"
           />
         </form>
       </div>
-    );
-  }
-  
-  export default AddArts;
+    </div>
+  );
+}
+
+export default AddArts;
