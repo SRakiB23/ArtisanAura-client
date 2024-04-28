@@ -3,6 +3,8 @@ import Banner from "../components/Banner/Banner";
 import CraftCard from "../components/CraftCard/CraftCard";
 import { useState } from "react";
 import AllArtCraftSub from "./AllArtCraftSub/AllArtCraftSub";
+import ExtraSectionOne from "../components/ExtraSectionOne";
+import ExtraSectionTwo from "../components/ExtraSectionTwo";
 
 const Home = () => {
   const loadedArts = useLoaderData();
@@ -13,7 +15,7 @@ const Home = () => {
       <div className="">
         <h1 className="text-center font-bold text-3xl py-6">Craft Items</h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pl-4">
-          {arts.map((art) => (
+          {arts.slice(0, 6).map((art) => (
             <CraftCard
               key={art._id}
               art={art}
@@ -24,6 +26,8 @@ const Home = () => {
         </div>
       </div>
       <AllArtCraftSub></AllArtCraftSub>
+      <ExtraSectionOne></ExtraSectionOne>
+      <ExtraSectionTwo></ExtraSectionTwo>
     </div>
   );
 };

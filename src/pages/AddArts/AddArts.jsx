@@ -100,15 +100,13 @@ function AddArts() {
                 <span className="label-text text-white">Subcategory Name</span>
               </label>
               <label className="select">
-                <select
-                  name="subcategory_name"
-                >
+                <select name="subcategory_name">
                   <option>Select Subcategory</option>
                   <option>Landscape Painting</option>
                   <option>Portrait Drawing</option>
                   <option>Watercolour Painting</option>
-                  <option >Oil Painting</option>
-                  <option >Charcoal Sketching</option>
+                  <option>Oil Painting</option>
+                  <option>Charcoal Sketching</option>
                   <option>Cartoon Drawing</option>
                 </select>
               </label>
@@ -162,13 +160,11 @@ function AddArts() {
               <label className="label">
                 <span className="label-text text-white">Customization</span>
               </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="customization"
-                  placeholder="Details"
-                  className="input input-bordered md:w-full"
-                />
+              <label className="select">
+                <select name="customization">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
               </label>
             </div>
           </div>
@@ -191,13 +187,11 @@ function AddArts() {
               <label className="label">
                 <span className="label-text text-white">Stock Status</span>
               </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="stockStatus"
-                  placeholder="Stock Status"
-                  className="input input-bordered md:w-full"
-                />
+              <label className="select">
+                <select name="stockStatus">
+                  <option>In Stock</option>
+                  <option>Made to Order</option>
+                </select>
               </label>
             </div>
           </div>

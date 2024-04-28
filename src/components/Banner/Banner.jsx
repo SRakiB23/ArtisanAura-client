@@ -16,7 +16,7 @@ const Banner = () => {
       <Slider {...settings}>
         <div className="text-center relative">
           <img
-            src="https://i.ibb.co/vqhYNQ8/pexels-photo-795693-jpeg-cs-srgb-dl-pexels-daniel-ape-795693.jpg"
+            src="https://i.ibb.co/XZSZSrQ/pexels-photo-6399717-jpeg-cs-srgb-dl-pexels-daejeung-6399717.jpg"
             alt="Image 1"
             className="object-cover h-80 w-full bg-black"
           />
@@ -34,7 +34,7 @@ const Banner = () => {
         </div>
         <div className="text-center relative">
           <img
-            src="https://i.ibb.co/XZSZSrQ/pexels-photo-6399717-jpeg-cs-srgb-dl-pexels-daejeung-6399717.jpg"
+            src="https://i.ibb.co/vqhYNQ8/pexels-photo-795693-jpeg-cs-srgb-dl-pexels-daniel-ape-795693.jpg"
             alt="Image 2"
             className="object-cover h-80 w-full opacity-75"
           />

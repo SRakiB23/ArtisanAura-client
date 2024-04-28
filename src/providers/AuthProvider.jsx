@@ -52,9 +52,9 @@ const AuthProvider = ({ children }) => {
   };
 
   //github login
-  // const gitHubLogin = () => {
-  //   return signInWithPopup(auth, gitHubProvider);
-  // };
+  const gitHubLogin = () => {
+    return signInWithPopup(auth, gitHubProvider);
+  };
 
   const logOut = () => {
     setLoading(true);
@@ -86,7 +86,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     signIn,
     googleLogin,
-    // gitHubLogin,
+    gitHubLogin,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

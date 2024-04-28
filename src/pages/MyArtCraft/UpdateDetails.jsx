@@ -70,7 +70,7 @@ function UpdateDetails() {
       >
         <div className="px-20 py-10 max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-black pb-10">
-            Add Arts & Crafts
+            Update Arts & Crafts
           </h2>
           <form onSubmit={handleUpdateArts}>
             {/*User PhotoURL*/}
@@ -115,7 +115,6 @@ function UpdateDetails() {
                     name="subcategory_name"
                     defaultValue={artDetails?.subcategory_name}
                   >
-                    <option>Select Subcategory</option>
                     <option>Landscape Painting</option>
                     <option>Portrait Drawing</option>
                     <option>Watercolour Painting</option>
