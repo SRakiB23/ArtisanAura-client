@@ -7,6 +7,7 @@ import { IoIosArrowDropdown } from "react-icons/io";
 const MyArtCraft = (art) => {
   const data = useContext(AuthContext);
   const [artDetails, setArtDetails] = useState([]);
+  const [sort, setSort] = useState("");
 
   useEffect(() => {
     if (data?.user?.email)
@@ -17,8 +18,8 @@ const MyArtCraft = (art) => {
   }, [data?.user]);
   console.log(artDetails);
 
-  const handleSort = () => {
-    console.log("Paisse");
+  const handleSort = (value) => {
+    setSort(value);
   };
 
   return (
@@ -34,23 +35,39 @@ const MyArtCraft = (art) => {
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a onClick={handleSort}>Yes</a>
+              <a onClick={() => handleSort("yes")}>Yes</a>
             </li>
             <li>
-              <a>No</a>
+              <a onClick={() => handleSort("no")}>No</a>
+            </li>
+            <li>
+              <a onClick={() => handleSort("")}>All</a>
             </li>
           </ul>
         </div>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pl-4">
-        {artDetails?.map((art) => (
-          <MyArtCraftList
-            key={art._id}
-            art={art}
-            artDetails={artDetails}
-            setArtDetails={setArtDetails}
-          ></MyArtCraftList>
-        ))}
+        {sort
+          ? artDetails
+              .filter(
+                (artDetails) => artDetails.customization.toLowerCase() === sort
+              )
+              .map((art) => (
+                <MyArtCraftList
+                  key={art._id}
+                  art={art}
+                  artDetails={artDetails}
+                  setArtDetails={setArtDetails}
+                ></MyArtCraftList>
+              ))
+          : artDetails.map((art) => (
+              <MyArtCraftList
+                key={art._id}
+                art={art}
+                artDetails={artDetails}
+                setArtDetails={setArtDetails}
+              ></MyArtCraftList>
+            ))}
       </div>
     </div>
   );

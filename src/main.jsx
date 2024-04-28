@@ -15,6 +15,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 import MyArtCraft from "./pages/MyArtCraft/MyArtCraft";
 import UpdateDetails from "./pages/MyArtCraft/UpdateDetails";
 import AllArtCraftSub from "./pages/AllArtCraftSub/AllArtCraftSub";
+import AllArtCraftSubCategory from "./pages/AllArtCraftSub/AllArtCraftSubCategory";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
         path: "/artscrafts",
         element: <AllArtCraftSub></AllArtCraftSub>,
       },
+      {
+        path: "/artscraftsubcategory/:subcategory",
+        element: <AllArtCraftSubCategory></AllArtCraftSubCategory>,
+      },
+
       {
         path: "/login",
         element: <Login></Login>,

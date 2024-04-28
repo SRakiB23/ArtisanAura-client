@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 function UpdateDetails() {
@@ -16,6 +15,7 @@ function UpdateDetails() {
       .then((data) => setArtDetails(data))
       .catch((error) => console.error("Error fetching art details:", error));
   }, [_id]);
+  console.log(artDetails);
 
   const handleUpdateArts = (event) => {
     event.preventDefault();
