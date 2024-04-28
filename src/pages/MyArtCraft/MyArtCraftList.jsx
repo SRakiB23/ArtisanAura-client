@@ -60,6 +60,7 @@ function MyArtCraftList({ art, artDetails, setArtDetails }) {
             <p>{short_description}</p>
             <p>Price: {price}$</p>
             <p>Processing Time: {processing_time}</p>
+            <p>Customization: {customization}</p>
             <div className="flex items-center justify-around">
               <Link to={`/updatedetails/${art._id}`}>
                 <button className="bg-green-600 p-4 text-white rounded-2xl">

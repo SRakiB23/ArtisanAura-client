@@ -14,6 +14,7 @@ import AllArtCraft from "./pages/AllArtCraft/AllArtCraft";
 import PrivateRoute from "./routes/PrivateRoute";
 import MyArtCraft from "./pages/MyArtCraft/MyArtCraft";
 import UpdateDetails from "./pages/MyArtCraft/UpdateDetails";
+import AllArtCraftSub from "./pages/AllArtCraftSub/AllArtCraftSub";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("http://localhost:3000/arts"),
+      },
+      {
+        path: "/artscrafts",
+        element: <AllArtCraftSub></AllArtCraftSub>,
       },
       {
         path: "/login",

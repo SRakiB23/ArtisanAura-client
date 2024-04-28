@@ -10,12 +10,16 @@ const MyArtCraft = (art) => {
 
   useEffect(() => {
     if (data?.user?.email)
-      fetch(`http://localhost:3000/arts/email/${data?.user.email}`)
+      fetch(`http://localhost:3000/arts/email/${data.user.email}`)
         .then((response) => response.json())
         .then((data) => setArtDetails(data))
         .catch((error) => console.error("Error fetching art details:", error));
   }, [data?.user]);
   console.log(artDetails);
+
+  const handleSort = () => {
+    console.log("Paisse");
+  };
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -30,7 +34,7 @@ const MyArtCraft = (art) => {
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Yes</a>
+              <a onClick={handleSort}>Yes</a>
             </li>
             <li>
               <a>No</a>
@@ -41,7 +45,7 @@ const MyArtCraft = (art) => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pl-4">
         {artDetails?.map((art) => (
           <MyArtCraftList
-            key={art.email}
+            key={art._id}
             art={art}
             artDetails={artDetails}
             setArtDetails={setArtDetails}
