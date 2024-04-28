@@ -57,11 +57,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/myarts&crafts",
-        element: <MyArtCraft></MyArtCraft>,
+        element: (
+          <PrivateRoute>
+            <MyArtCraft></MyArtCraft>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/updatedetails/:_id",
-        element: <UpdateDetails></UpdateDetails>,
+        element: (
+          <PrivateRoute>
+            <UpdateDetails></UpdateDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:3000/arts"),
       },
     ],

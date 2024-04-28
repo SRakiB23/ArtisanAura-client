@@ -20,7 +20,6 @@ function UpdateDetails() {
   const handleUpdateArts = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
     const item_name = form.item_name.value;
     const subcategory_name = form.subcategory_name.value;
     const short_description = form.short_description.value;
@@ -30,10 +29,8 @@ function UpdateDetails() {
     const customization = form.customization.value;
     const processing_time = form.processing_time.value;
     const stockStatus = form.stockStatus.value;
-    const email = form.email.value;
 
     const updateArts = {
-      name,
       item_name,
       subcategory_name,
       short_description,
@@ -43,7 +40,6 @@ function UpdateDetails() {
       customization,
       processing_time,
       stockStatus,
-      email,
     };
     console.log(updateArts);
 
@@ -77,37 +73,6 @@ function UpdateDetails() {
             Add Arts & Crafts
           </h2>
           <form onSubmit={handleUpdateArts}>
-            {/*User Email and Name Row*/}
-            <div className="md:flex gap-4 mb-6">
-              <div className="form-control md:w-1/2">
-                <label className="label">
-                  <span className="label-text text-white">User Email</span>
-                </label>
-                <label className="input-group">
-                  <input
-                    type="text"
-                    name="email"
-                    value={user?.email ?? ""}
-                    readOnly={true}
-                    className="input input-bordered md:w-full"
-                  />
-                </label>
-              </div>
-              <div className="form-control md:w-1/2">
-                <label className="label">
-                  <span className="label-text text-white">User Name</span>
-                </label>
-                <label className="input-group">
-                  <input
-                    type="text"
-                    name="name"
-                    value={user?.displayName ?? ""}
-                    readOnly={true}
-                    className="input input-bordered md:w-full"
-                  />
-                </label>
-              </div>
-            </div>
             {/*User PhotoURL*/}
             <div className="form-control w-full mb-6">
               <label className="label ">
