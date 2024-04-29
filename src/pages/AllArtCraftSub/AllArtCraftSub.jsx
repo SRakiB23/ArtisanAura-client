@@ -5,7 +5,9 @@ function AllArtCraftSub({}) {
   const [artsCrafts, setArtsCrafts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/artscrafts")
+    fetch(
+      "https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/artscrafts"
+    )
       .then((response) => response.json())
       .then((data) => setArtsCrafts(data))
       .catch((error) =>
@@ -15,7 +17,10 @@ function AllArtCraftSub({}) {
 
   return (
     <div>
-      <h2 className="text-center text-3xl font-bold py-8 bg-orange-400 rounded-2xl my-4">
+      <h2
+        className="text-center text-3xl font-bold py-8 rounded-2xl my-4
+      bg-gradient-to-r from-purple-400 via-red-400 to-yellow-300"
+      >
         Arts & Crafts Category
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pl-4">

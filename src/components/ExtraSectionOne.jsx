@@ -15,17 +15,17 @@ function ExtraSectionOne() {
           </h2>
           <div className="md:flex justify-around gap-10">
             <p className="p-8 border w-40 text-xl font-medium bg-amber-400">
-              <CountUp className="text-3xl font-bold" end={100} duration={20} />
+              <CountUp className="text-3xl font-bold" end={100} duration={15} />
               <br />
               Exhibitation
             </p>
             <p className="p-8 border w-40 text-xl font-medium bg-orange-400">
-              <CountUp className="text-3xl font-bold" end={50} duration={20} />
+              <CountUp className="text-3xl font-bold" end={500} duration={15} />
               <br />
               Visitors
             </p>
             <p className="p-8 border w-40 text-xl font-medium bg-green-400">
-              <CountUp className="text-3xl font-bold" end={80} duration={20} />
+              <CountUp className="text-3xl font-bold" end={80} duration={15} />
               <br />
               Awards
             </p>

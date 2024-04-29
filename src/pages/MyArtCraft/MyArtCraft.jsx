@@ -7,13 +7,20 @@ import { IoIosArrowDropdown } from "react-icons/io";
 const MyArtCraft = (art) => {
   const data = useContext(AuthContext);
   const [artDetails, setArtDetails] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [sort, setSort] = useState("");
 
   useEffect(() => {
+    setLoading(true);
     if (data?.user?.email)
-      fetch(`http://localhost:3000/arts/email/${data.user.email}`)
+      fetch(
+        `https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/arts/email/${data.user.email}`
+      )
         .then((response) => response.json())
-        .then((data) => setArtDetails(data))
+        .then((data) => {
+          setArtDetails(data);
+          setLoading(false);
+        })
         .catch((error) => console.error("Error fetching art details:", error));
   }, [data?.user]);
   console.log(artDetails);

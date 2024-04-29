@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { Typewriter } from "react-simple-typewriter";
 
 function AddArts() {
   const { user, displayName } = useContext(AuthContext);
@@ -39,13 +40,16 @@ function AddArts() {
 
     //send data to server
 
-    fetch("http://localhost:3000/arts", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newArts),
-    })
+    fetch(
+      "https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/arts",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newArts),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

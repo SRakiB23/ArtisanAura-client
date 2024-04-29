@@ -23,7 +23,7 @@ function CraftCard({ art }) {
           <div className="card-content p-4 flex flex-col">
             <img
               src={photo}
-              alt="Shoes"
+              alt="image"
               className="rounded-xl h-96 object-cover mb-4"
             />
             <h2 className="card-title text-lg font-bold">{item_name}</h2>

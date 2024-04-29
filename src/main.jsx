@@ -17,16 +17,21 @@ import UpdateDetails from "./pages/MyArtCraft/UpdateDetails";
 import AllArtCraftSub from "./pages/AllArtCraftSub/AllArtCraftSub";
 import AllArtCraftSubCategory from "./pages/AllArtCraftSub/AllArtCraftSubCategory";
 import ArtCraftDetails from "./pages/ArtDetails/ArtCraftDetails";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/arts"),
+        loader: () =>
+          fetch(
+            "https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/arts"
+          ),
       },
       {
         path: "/artscrafts",
@@ -60,7 +65,10 @@ const router = createBrowserRouter([
             <ArtDetails></ArtDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:3000/arts"),
+        loader: () =>
+          fetch(
+            "https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/arts"
+          ),
       },
       {
         path: "/artcraftdetails/:_id",
@@ -69,12 +77,18 @@ const router = createBrowserRouter([
             <ArtCraftDetails></ArtCraftDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:3000/artscrafts"),
+        loader: () =>
+          fetch(
+            "https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/artscrafts"
+          ),
       },
       {
         path: "/allarts&crafts",
         element: <AllArtCraft></AllArtCraft>,
-        loader: () => fetch("http://localhost:3000/arts"),
+        loader: () =>
+          fetch(
+            "https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/arts"
+          ),
       },
       {
         path: "/myarts&crafts",
@@ -91,7 +105,10 @@ const router = createBrowserRouter([
             <UpdateDetails></UpdateDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:3000/arts"),
+        loader: () =>
+          fetch(
+            "https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/arts"
+          ),
       },
     ],
   },

@@ -7,7 +7,9 @@ const ArtCraftDetails = () => {
 
   useEffect(() => {
     // Fetch art details using the _id parameter
-    fetch(`http://localhost:3000/artscrafts/details/${_id}`)
+    fetch(
+      `https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/artscrafts/details/${_id}`
+    )
       .then((response) => response.json())
       .then((data) => setArtCraftDetails(data))
       .catch((error) => console.error("Error fetching art details:", error));
@@ -28,7 +30,6 @@ const ArtCraftDetails = () => {
         {artCraftDetails && (
           <div className="grid md:grid-cols-2 gap-10">
             <div className="md:w-96 flex items-center">
-              <h2>Mama Kam Kore</h2>
               <img src={artCraftDetails.photo} alt="" className="mx-auto" />
             </div>
             <div>
@@ -40,7 +41,6 @@ const ArtCraftDetails = () => {
                 <span className="font-bold text-xl">Subcategory Name: </span>
                 {artCraftDetails.subcategory_name}
               </p>
-              Craft
               <p className="p-4">
                 <span className="font-bold text-xl">Short Description: </span>
                 {artCraftDetails.short_description}

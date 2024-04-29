@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import "animate.css";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { useTypewriter } from "react-simple-typewriter";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -73,7 +74,11 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/">
-            <button className="btn btn-ghost text-xl">ArtisanAura</button>
+            <img
+              className="w-48"
+              src="https://i.ibb.co/LR5rfTJ/Screenshot-2024-04-29-at-11-40-30-AM.png"
+              alt=""
+            />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

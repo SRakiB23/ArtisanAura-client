@@ -7,9 +7,13 @@ const ArtDetails = () => {
 
   useEffect(() => {
     // Fetch art details using the _id parameter
-    fetch(`http://localhost:3000/arts/${_id}`)
+    fetch(
+      `https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/arts/${_id}`
+    )
       .then((response) => response.json())
-      .then((data) => setArtDetails(data))
+      .then((data) => {
+        setArtDetails(data);
+      })
       .catch((error) => console.error("Error fetching art details:", error));
   }, [_id]);
 

@@ -7,12 +7,19 @@ function UpdateDetails() {
   const { _id } = useParams();
   const [artDetails, setArtDetails] = useState(null);
   const { user } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch art details using the _id parameter
-    fetch(`http://localhost:3000/arts/${_id}`)
+    setLoading(true);
+    fetch(
+      `https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/arts/${_id}`
+    )
       .then((response) => response.json())
-      .then((data) => setArtDetails(data))
+      .then((data) => {
+        setArtDetails(data);
+        setLoading(false);
+      })
       .catch((error) => console.error("Error fetching art details:", error));
   }, [_id]);
   console.log(artDetails);
@@ -43,13 +50,16 @@ function UpdateDetails() {
     };
     console.log(updateArts);
 
-    fetch(`http://localhost:3000/arts/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateArts),
-    })
+    fetch(
+      `https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/arts/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateArts),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

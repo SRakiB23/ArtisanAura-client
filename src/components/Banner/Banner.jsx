@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useTypeWriter from "../UseTypeWriter";
 
 const Banner = () => {
   const settings = {
@@ -10,6 +11,7 @@ const Banner = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  const typewriterText = useTypeWriter("ArtisanAura");
 
   return (
     <div className="relative">
@@ -18,16 +20,16 @@ const Banner = () => {
           <img
             src="https://i.ibb.co/XZSZSrQ/pexels-photo-6399717-jpeg-cs-srgb-dl-pexels-daejeung-6399717.jpg"
             alt="Image 1"
-            className="object-cover h-80 w-full bg-black"
+            className="object-cover h-80 w-full bg-black opacity-70"
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black">
-            <h1 className="text-4xl font-bold mb-4 bg-lime-50 rounded-xl p-2">
-              Welcome to <span className="text-purple-700">ArtisanAura</span>
+            <h1 className="text-4xl font-bold mb-4 bg-fuchsia-50 rounded-xl p-2">
+              Welcome to <span className="text-cyan-700">{typewriterText}</span>
             </h1>
-            <p className="text-xl font-medium text-lime-600">
+            <p className="text-xl font-medium text-lime-200">
               Best arts & crafts collections.....
             </p>
-            <button className="bg-purple-700 text-white px-4 py-2 rounded-md mt-4 focus:outline-none">
+            <button className="bg-lime-500 px-4 py-2 rounded-md mt-4 focus:outline-none">
               Explore
             </button>
           </div>
@@ -41,12 +43,12 @@ const Banner = () => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black">
             <h1 className="text-4xl font-bold mb-4 bg-lime-50 rounded-xl p-2">
               Welcome to
-              <span className="text-purple-700 "> ArtisanAura</span>
+              <span className="text-cyan-700 "> {typewriterText}</span>
             </h1>
-            <p className="text-xl font-medium text-lime-600">
+            <p className="text-xl font-medium text-sky-200">
               ...Made with Love and Passion
             </p>
-            <button className="bg-purple-700 text-white px-4 py-2 rounded-md mt-4 focus:outline-none">
+            <button className="bg-lime-500 text-white px-4 py-2 rounded-md mt-4 focus:outline-none">
               Explore
             </button>
           </div>
@@ -59,10 +61,11 @@ const Banner = () => {
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black">
             <h1 className="text-4xl font-bold mb-4 bg-lime-50 rounded-xl p-2">
-              Welcome to <span className="text-purple-700">ArtisanAura</span>
+              Welcome to{" "}
+              <span className="text-cyan-700"> {typewriterText}</span>
             </h1>
-            <p className="text-xl font-medium text-lime-600 rounded-xl p-2">
-              Find the art you Love
+            <p className="text-xl font-medium text-yellow-200 rounded-xl p-2">
+              Find the art you Love...
             </p>
             <button className="bg-purple-700 text-white px-4 py-2 rounded-md mt-4 focus:outline-none">
               Explore

@@ -21,10 +21,10 @@ const AllArtCraftSubCategory = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/artscrafts/${d.subcategory}`
+          `https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/artscrafts/${d.subcategory}`
         );
         const response2 = await axios.get(
-          `http://localhost:3000/artss/${d.subcategory}`
+          `https://artisan-aura-serverside-qgcatct67-sazzad-bashar-rakibs-projects.vercel.app/artss/${d.subcategory}`
         );
         setData(response.data);
         setData2(response2.data);
@@ -51,21 +51,22 @@ const AllArtCraftSubCategory = () => {
       <h2 className="text-center font-bold text-3xl py-5">
         Arts & Crafts Category List
       </h2>
-      <div className="md:grid grid-cols-2 lg:grid-cols-3">
+      <div className="md:flex gap-2">
         <div className="mb-6 rounded-xl p-2">
           {data.map((item, index) => (
-            <div
-              className="card card-compact w-96 bg-base-100 shadow-xl"
-              key={index}
-            >
+            <div className="card w-96 h-full bg-base-100 shadow-xl" key={index}>
               <figure>
-                <img className="h-64" src={item.photo} alt={item.item_name} />
+                <img
+                  className="h-64 w-full"
+                  src={item.photo}
+                  alt={item.item_name}
+                />
               </figure>
               <div className="card-body">
                 <h2 className="card-title text-3xl font-semibold pb-2">
                   {item.item_name}
                 </h2>
-                <p className="text-xl text-gray-700">
+                <p className="text-xl">
                   <span className="font-bold text-2xl">SubCategory: </span>
                   {item.subcategory_name}
                 </p>
@@ -98,14 +99,15 @@ const AllArtCraftSubCategory = () => {
           ))}
         </div>
 
-        <div className="mb-6 rounded-xl p-2">
+        <div className="mb-6 rounded-xl p-2 md:flex gap-4">
           {data2.map((item, index) => (
-            <div
-              className="card card-compact w-96 bg-base-100 shadow-xl"
-              key={index}
-            >
+            <div className="card w-96 h-full bg-base-100 shadow-xl" key={index}>
               <figure>
-                <img className="" src={item.photo} alt={item.item_name} />
+                <img
+                  className="h-64 w-full"
+                  src={item.photo}
+                  alt={item.item_name}
+                />
               </figure>
               <div className="card-body">
                 <h2 className="card-title text-3xl font-semibold pb-2">

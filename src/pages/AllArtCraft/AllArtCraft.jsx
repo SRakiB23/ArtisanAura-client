@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AllArtCraftTable from "./AllArtCraftTable";
 
 function AllArtCraft() {
   const loadedArts = useLoaderData();
+
   const [arts, setArts] = useState(loadedArts);
   console.log(arts);
   return (
