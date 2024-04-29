@@ -16,6 +16,7 @@ import MyArtCraft from "./pages/MyArtCraft/MyArtCraft";
 import UpdateDetails from "./pages/MyArtCraft/UpdateDetails";
 import AllArtCraftSub from "./pages/AllArtCraftSub/AllArtCraftSub";
 import AllArtCraftSubCategory from "./pages/AllArtCraftSub/AllArtCraftSubCategory";
+import ArtCraftDetails from "./pages/ArtDetails/ArtCraftDetails";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,15 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:3000/arts"),
+      },
+      {
+        path: "/artcraftdetails/:_id",
+        element: (
+          <PrivateRoute>
+            <ArtCraftDetails></ArtCraftDetails>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:3000/artscrafts"),
       },
       {
         path: "/allarts&crafts",

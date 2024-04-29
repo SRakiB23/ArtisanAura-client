@@ -14,17 +14,17 @@ function ExtraSectionOne() {
             Crafting Beautiful" -
           </h2>
           <div className="md:flex justify-around gap-10">
-            <p className="p-8 border w-40 text-xl font-medium bg-slate-100">
+            <p className="p-8 border w-40 text-xl font-medium bg-amber-400">
               <CountUp className="text-3xl font-bold" end={100} duration={20} />
               <br />
               Exhibitation
             </p>
-            <p className="p-8 border w-40 text-xl font-medium bg-gray-200">
+            <p className="p-8 border w-40 text-xl font-medium bg-orange-400">
               <CountUp className="text-3xl font-bold" end={50} duration={20} />
               <br />
               Visitors
             </p>
-            <p className="p-8 border w-40 text-xl font-medium bg-gray-300">
+            <p className="p-8 border w-40 text-xl font-medium bg-green-400">
               <CountUp className="text-3xl font-bold" end={80} duration={20} />
               <br />
               Awards
