@@ -1,5 +1,5 @@
 import { BsBuildingFillCheck } from "react-icons/bs";
-import { FaPhone, FaVoicemail } from "react-icons/fa6";
+import { FaPhone, FaRegCopyright, FaVoicemail } from "react-icons/fa6";
 import { HiOutlineMailOpen } from "react-icons/hi";
 
 const Footer = () => {
@@ -18,6 +18,10 @@ const Footer = () => {
             Explore endless creativity and boundless inspiration <br />
             with our art and craft collection <br /> Join our vibrant community
             of artists
+          </p>
+          <p className="text-gray-500 flex items-center gap-2">
+            <FaRegCopyright />
+            2024 All rights reserved by ArtisaAura.
           </p>
         </div>
         <nav>
